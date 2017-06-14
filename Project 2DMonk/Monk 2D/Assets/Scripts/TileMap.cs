@@ -16,6 +16,10 @@ public class TileMap : MonoBehaviour {
 	public string objName;
 	public int objId;
 
+	// used to create an object in a new parent object
+	public bool createNew = false;
+	public string newName;
+
 	public Sprite currentTileBrush{
 		get { return spriteReferences [tileID] as Sprite;}
 	}

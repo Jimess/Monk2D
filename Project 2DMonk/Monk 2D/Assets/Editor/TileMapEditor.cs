@@ -48,6 +48,22 @@ public class TileMapEditor : Editor {
 			//Parent to which the tiles are going to be created on
 			map.parent = (Transform)EditorGUILayout.ObjectField ("Parent Object: ", map.parent, typeof(Transform), true);
 
+
+			// Toggle to create a gameobject from a new
+			EditorGUILayout.BeginHorizontal ();
+			EditorGUILayout.LabelField ("Create Object In a New Object");
+			map.createNew = EditorGUILayout.Toggle (map.createNew);
+			EditorGUILayout.EndHorizontal ();
+
+			EditorGUILayout.BeginHorizontal ();
+			// display additional panel if create a new is selected
+			if (map.createNew) {
+				// UpdateCalculations ();
+				EditorGUILayout.LabelField ("New Object Name");
+				map.newName = EditorGUILayout.TextField (map.newName);
+			}
+			EditorGUILayout.EndHorizontal ();
+
 			EditorGUILayout.BeginHorizontal ();
 			// created object name
 			EditorGUILayout.LabelField ("Object name: ");
@@ -208,24 +224,44 @@ public class TileMapEditor : Editor {
 		var posY = brush.transform.position.y;
 
 		// GameObject tile = GameObject.Find (map.name + "/Tiles/tile_" + id);
-		GameObject tile = GameObject.Find (map.objName + id);
+		if (!map.createNew) { 
+			GameObject tile = GameObject.Find (map.objName + id);
+			if (tile == null) {
+				tile = new GameObject(map.objName + id);
+				tile.transform.SetParent(map.parent);
+				tile.transform.position = new Vector3(posX, posY, 0);
+				tile.AddComponent<SpriteRenderer>();
+			}
 
-		// while (tile != null) {
-		// 	map.objId++;
-		// 	tile = GameObject.Find (map.objName + map.objId);
-		// }
-
-
-		if (tile == null) {
-			tile = new GameObject(map.objName + id);
-			tile.transform.SetParent(map.parent);
-			tile.transform.position = new Vector3(posX, posY, 0);
-			tile.AddComponent<SpriteRenderer>();
+			tile.GetComponent<SpriteRenderer> ().sprite = brush.renderer2D.sprite;
+		} else { // if create a new is selected
+			if (map.newName.Length > 0) {
+				GameObject parent = GameObject.Find (map.newName + id);
+				if (parent != null) { // checking if the parent is already present
+					parent.transform.SetParent (map.parent);
+					GameObject tile = GameObject.Find (map.objName + id);
+					if (tile == null) {
+						tile = new GameObject(map.objName + id);
+						tile.transform.SetParent(parent.transform);
+						tile.transform.position = new Vector3(posX, posY, 0);
+						tile.AddComponent<SpriteRenderer>();
+					}
+					tile.GetComponent<SpriteRenderer> ().sprite = brush.renderer2D.sprite;
+				} else { // if parent does not exist
+					parent = new GameObject (map.newName + id);
+					parent.transform.SetParent (map.parent);
+					parent.transform.position = new Vector3 (posX, posY);
+					GameObject tile = GameObject.Find (map.objName + id);
+					if (tile == null) {
+						tile = new GameObject(map.objName + id);
+						tile.transform.SetParent(parent.transform);
+						tile.transform.position = new Vector3(posX, posY, 0);
+						tile.AddComponent<SpriteRenderer>();
+					}
+					tile.GetComponent<SpriteRenderer> ().sprite = brush.renderer2D.sprite;
+				}
+			}
 		}
-
-		tile.GetComponent<SpriteRenderer> ().sprite = brush.renderer2D.sprite;
-
-		// map.objId++;
 	}
 
 	void RemoveTile(){
