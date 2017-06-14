@@ -1,6 +1,46 @@
 Base path: C:/Program Files/Unity/Editor/Data
 Cmd: initializeCompiler
+Cmd: preprocess
+  insize=2036 outsize=644 ok=1
+Cmd: preprocess
+  insize=2739 outsize=775 ok=1
+Cmd: preprocess
+  insize=2220 outsize=702 ok=1
+Cmd: preprocess
+  insize=1457 outsize=1651 ok=1
+Cmd: preprocess
+  insize=2398 outsize=778 ok=1
+Cmd: preprocess
+  insize=1638 outsize=1645 ok=1
+Cmd: preprocess
+  insize=1969 outsize=710 ok=1
+Cmd: preprocess
+  insize=1539 outsize=602 ok=1
+Cmd: preprocess
+  insize=2492 outsize=784 ok=1
+Cmd: preprocess
+  insize=1810 outsize=649 ok=1
+Cmd: preprocess
+  insize=2036 outsize=644 ok=1
+Cmd: preprocess
+  insize=2739 outsize=775 ok=1
+Cmd: preprocess
+  insize=2220 outsize=702 ok=1
+Cmd: preprocess
+  insize=1457 outsize=1651 ok=1
+Cmd: preprocess
+  insize=2398 outsize=778 ok=1
+Cmd: preprocess
+  insize=1638 outsize=1645 ok=1
+Cmd: preprocess
+  insize=1969 outsize=710 ok=1
+Cmd: preprocess
+  insize=1539 outsize=602 ok=1
+Cmd: preprocess
+  insize=2492 outsize=784 ok=1
+Cmd: preprocess
+  insize=1810 outsize=649 ok=1
 Cmd: compileSnippet
-  api=1 type=0 insize=1860 outsize=740 kw=PIXELSNAP_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA ok=1
+  api=1 type=0 insize=1600 outsize=756 kw=PIXELSNAP_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA ok=1
 Cmd: compileSnippet
-  api=1 type=1 insize=1860 outsize=208 kw=PIXELSNAP_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA ok=1
+  api=1 type=1 insize=1600 outsize=208 kw=PIXELSNAP_ON pd=UNITY_ENABLE_REFLECTION_BUFFERS UNITY_USE_DITHER_MASK_FOR_ALPHABLENDED_SHADOWS UNITY_PBS_USE_BRDF1 UNITY_SPECCUBE_BOX_PROJECTION UNITY_SPECCUBE_BLENDING UNITY_ENABLE_DETAIL_NORMALMAP SHADER_API_DESKTOP UNITY_COLORSPACE_GAMMA ok=1
